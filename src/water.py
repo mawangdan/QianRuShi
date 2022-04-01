@@ -26,7 +26,7 @@ def on_disconnect(client, userdata, rc):
 
 
 if __name__ == '__main__':
-    MQTTHOST = "120.46.149.254"  
+    MQTTHOST = "120.46.149.254"
     MQTTPORT = 1883
     ClientId = "pycharm" + str(time.time())
     username = "admin"
@@ -40,5 +40,5 @@ if __name__ == '__main__':
     mqtt_client.connect(MQTTHOST, MQTTPORT, 60)
     while True:
         time.sleep(1)
-        mqtt_client.publish("Python_publish", "hh王子昂", qos=0)
+        mqtt_client.publish("Python_publish", "1", qos=0)
     mqtt_client.loop_forever()
