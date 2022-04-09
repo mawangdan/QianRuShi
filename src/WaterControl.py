@@ -13,7 +13,7 @@ def mqtt_connected(mqttClient, userdata, flags,rc):
 
 
 def on_message(client, userdata, msg):
-    print("主题:",msg.topic," 消息:111")
+    print("主题:",msg.topic," 消息:")
     print(str(msg.payload.decode('utf-8')))
     msg=str(msg.payload.decode('utf-8'))
     if msg=="0":
