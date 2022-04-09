@@ -6,7 +6,7 @@ def mqtt_connected(mqttClient, userdata, flags,rc):
     if not rc:
         print("MQTT connect success.")
         #mqttClient.subscribe("Python_publish", qos=0)
-        mqttClient.publish("Python_publish", "I'm python.", qos=0)
+        mqttClient.publish("Python_publish", "1", qos=0)
 
     else:
         print("MQTT connect error:", rc)
