@@ -15,6 +15,7 @@ def on_message_waterCircle(client, userdata, msg):
     if(msg=="0"):
         openpump=LED(GPIO7)
         openpump.open()
+
     elif(msg=="1"):
         openpump = LED(GPIO7)
         openpump.off()
