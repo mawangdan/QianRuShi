@@ -1,5 +1,7 @@
 import random
 import time
+from loongpio import LED
+from time import sleep
 
 from MqttClientSend import MyMqttSend
 from MqttClientSub import MyMqttSub
@@ -11,9 +13,11 @@ def on_message_waterCircle(client, userdata, msg):
     msg=str(msg.payload.decode('utf-8'))
     #这里写接到消息干嘛,主要是使水循环开启
     if(msg=="0"):
-        pass
+        openpump=LED(GPIO7)
+        openpump.open()
     elif(msg=="1"):
-        pass
+        openpump = LED(GPIO7)
+        openpump.off()
 
 
 def on_message_grassLight(client, userdata, msg):
