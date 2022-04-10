@@ -16,9 +16,9 @@ class MyMqttSend():
         self.mqtt_client.on_subscribe = on_subscribe
         self.mqtt_client.on_disconnect = on_disconnect
         self.mqtt_client.connect(self.MQTTHOST, self.MQTTPORT, 60)
-        self.mqtt_client.loop_forever()
     def send(self,topic,msg):
         self.mqtt_client.publish(topic, msg, qos=0)
+        print(topic+msg)
 
 
 def mqtt_connected(mqttClient, userdata, flags,rc):

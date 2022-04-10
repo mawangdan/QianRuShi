@@ -39,6 +39,7 @@ if __name__ == '__main__':
     mqtt_client.on_disconnect = on_disconnect
     mqtt_client.connect(MQTTHOST, MQTTPORT, 60)
     while True:
-        time.sleep(1)
-        mqtt_client.publish("Python_publish", "hh王子昂", qos=0)
+        #instruction = input("请输入指令\n")
+        time.sleep(10)
+        mqtt_client.publish("Python_publish", str("111"), qos=0)
     mqtt_client.loop_forever()

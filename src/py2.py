@@ -1,6 +1,4 @@
 import time
-import LPi.GPIO as GPIO
-GPIO.setmode(GPIO.LS2K)
 import paho.mqtt.client as mqtt
 def mqtt_connected(mqttClient, userdata, flags,rc):
     print(flags)
@@ -15,8 +13,6 @@ def mqtt_connected(mqttClient, userdata, flags,rc):
 def on_message(client, userdata, msg):
     print("主题:",msg.topic," 消息:")
     print(str(msg.payload.decode('utf-8')))
-    if(msg.topic=="1"):
-        GPIO.output(2,1)
 
 def on_subscribe(client, userdata, mid, granted_qos):
     print("Subscrib topic success,qos = %d" % granted_qos)
