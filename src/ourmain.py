@@ -27,7 +27,7 @@ def on_message_grassLight(client, userdata, msg):
     #这里写接到消息干嘛，主要是使水草灯光开启
     msg = str(msg.payload.decode('utf-8'))
     if (msg == "0"):
-        openlight=LED(2)
+        openlight = LED(2)
         openlight.on()
         pass
     elif (msg == "1"):
