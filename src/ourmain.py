@@ -30,10 +30,10 @@ def on_message_grassLight(client, userdata, msg):
     msg = str(msg.payload.decode('utf-8'))
     if (msg == "0"):
         openlight = LED(2)
-        openlight.on()
+        openlight.off()
     elif (msg == "1"):
         openlight = LED(2)
-        openlight.off()
+        openlight.on()
 
 def on_message_food(client, userdata, msg):
     print("主题:",msg.topic," 消息:")
