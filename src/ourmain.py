@@ -13,11 +13,11 @@ def on_message_waterCircle(client, userdata, msg):
     msg=str(msg.payload.decode('utf-8'))
     #这里写接到消息干嘛,主要是使水循环开启
     if(msg=="0"):
-        openpump=LED(GPIO7)
-        openpump.open()
+        openpump=LED(7)
+        openpump.on()
 
     elif(msg=="1"):
-        openpump = LED(GPIO7)
+        openpump = LED(7)
         openpump.off()
 
 
@@ -27,8 +27,12 @@ def on_message_grassLight(client, userdata, msg):
     #这里写接到消息干嘛，主要是使水草灯光开启
     msg = str(msg.payload.decode('utf-8'))
     if (msg == "0"):
+        openlight=LED(2)
+        openlight.on()
         pass
     elif (msg == "1"):
+        openlight = LED(2)
+        openlight.off()
         pass
 
 def on_message_food(client, userdata, msg):
