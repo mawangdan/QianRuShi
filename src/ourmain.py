@@ -1,6 +1,8 @@
 import random
 import time
 from loongpio import LED
+from loongpio import *
+from loongpio import Servo
 from time import sleep
 
 from MqttClientSend import MyMqttSend
@@ -29,11 +31,9 @@ def on_message_grassLight(client, userdata, msg):
     if (msg == "0"):
         openlight = LED(2)
         openlight.on()
-        pass
     elif (msg == "1"):
         openlight = LED(2)
         openlight.off()
-        pass
 
 def on_message_food(client, userdata, msg):
     print("主题:",msg.topic," 消息:")
@@ -51,7 +51,12 @@ def on_message_douyu(client, userdata, msg):
     if (msg == "0"):
         pass
     elif (msg == "1"):
-        pass
+        servo = Servo(PWM0)
+        servo.min()
+        sleep(0.1)
+        servo.max()
+        sleep(0.1)
+        servo.min()
 
 if __name__ == '__main__':
     #这里传订阅的topic
