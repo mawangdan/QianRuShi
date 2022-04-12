@@ -61,17 +61,17 @@ if __name__ == '__main__':
     m5.start()
 
 
-    m1=MyMqttSend()
-    while True:
-        #10s更新一次信息
-        #这里通过IO读入信息
-        # topic,msg
-        m1.send("waterHeight", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
-        time.sleep(0.2)
-        m1.send("foodLast", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
-        time.sleep(0.2)
-        m1.send("waterTemp", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
-        time.sleep(0.2)
-        m1.send("grassLight", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
-        time.sleep(0.2)
+    # m1=MyMqttSend()
+    # while True:
+    #     #10s更新一次信息
+    #     #这里通过IO读入信息
+    #     # topic,msg
+    #     m1.send("waterHeight", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
+    #     time.sleep(0.2)
+    #     m1.send("foodLast", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
+    #     time.sleep(0.2)
+    #     m1.send("waterTemp", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
+    #     time.sleep(0.2)
+    #     m1.send("grassLight", str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])))
+    #     time.sleep(0.2)
 
