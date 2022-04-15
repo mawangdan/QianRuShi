@@ -42,7 +42,7 @@ def on_message_food(client, userdata, msg):
     if (msg == "1"):
         GPIO.setup(3, GPIO.OUT)
         GPIO.output(3, 1)
-        sleep(50)
+        sleep(30)
         GPIO.output(3, 0)
 
 
