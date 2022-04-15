@@ -14,13 +14,17 @@ def on_message_waterCircle(client, userdata, msg):
     if(msg=="0"):
         GPIO.setmode(GPIO.LS2K)
         GPIO.setup(7, GPIO.OUT)
+        print("wateron")
         GPIO.output(7, 0 )
+        print("wateronon")
         GPIO.cleanup()
 
     elif(msg=="1"):
         GPIO.setmode(GPIO.LS2K)
         GPIO.setup(7, GPIO.OUT)
+        print("wateroff")
         GPIO.output(7, 1)
+        print("wateronoff")
         GPIO.cleanup()
 
 
