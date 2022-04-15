@@ -45,7 +45,7 @@ def on_message_food(client, userdata, msg):
         print('food start')
         sleep(20)
         GPIO.output(3, 0)
-        print('food over')
+        print('food overover')
 
 
 def on_message_douyu(client, userdata, msg):
