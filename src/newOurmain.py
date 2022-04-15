@@ -14,15 +14,11 @@ def on_message_waterCircle(client, userdata, msg):
     #这里写接到消息干嘛,主要是使水循环开启
     if(msg=="0"):
         GPIO.setup(7, GPIO.OUT)
-        print("wateron")
         GPIO.output(7, 0 )
-        print("wateronon")
 
     elif(msg=="1"):
         GPIO.setup(7, GPIO.OUT)
-        print("wateroff")
         GPIO.output(7, 1)
-        print("wateronoff")
 
 
 
@@ -32,15 +28,11 @@ def on_message_grassLight(client, userdata, msg):
     #这里写接到消息干嘛，主要是使水草灯光开启
     msg = str(msg.payload.decode('utf-8'))
     if (msg == "0"):
-        GPIO.setmode(GPIO.LS2K)
         GPIO.setup(2, GPIO.OUT)
         GPIO.output(2, 0)
-        GPIO.cleanup()
     elif (msg == "1"):
-        GPIO.setmode(GPIO.LS2K)
         GPIO.setup(2, GPIO.OUT)
         GPIO.output(2, 1)
-        GPIO.cleanup()
 
 def on_message_food(client, userdata, msg):
     print("主题:",msg.topic," 消息:")
@@ -48,15 +40,11 @@ def on_message_food(client, userdata, msg):
     #这里写接到消息干嘛，主要投喂一次
     msg = str(msg.payload.decode('utf-8'))
     if (msg == "1"):
-        GPIO.setmode(GPIO.LS2K)
         GPIO.setup(3, GPIO.OUT)
         GPIO.output(3, 1)
-        GPIO.cleanup()
-    elif (msg == "0"):
-        GPIO.setmode(GPIO.LS2K)
-        GPIO.setup(2, GPIO.OUT)
+        sleep(10)
         GPIO.output(3, 0)
-        GPIO.cleanup()
+
 
 def on_message_douyu(client, userdata, msg):
     print("主题:",msg.topic," 消息:")
