@@ -14,7 +14,7 @@ def on_message_waterCircle(client, userdata, msg):
     if(msg=="0"):
         GPIO.setmode(GPIO.LS2K)
         GPIO.setup(7, GPIO.OUT)
-        GPIO.output(7, 0)
+        GPIO.output(7, 0 )
         GPIO.cleanup()
 
     elif(msg=="1"):
