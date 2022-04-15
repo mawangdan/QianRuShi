@@ -42,8 +42,10 @@ def on_message_food(client, userdata, msg):
     if (msg == "1"):
         GPIO.setup(3, GPIO.OUT)
         GPIO.output(3, 1)
+        print('food start')
         sleep(20)
         GPIO.output(3, 0)
+        print('food over')
 
 
 def on_message_douyu(client, userdata, msg):
