@@ -6,26 +6,24 @@ from MqttClientSend import MyMqttSend
 from MqttClientSub import MyMqttSub
 
 
+
 def on_message_waterCircle(client, userdata, msg):
     print("主题:",msg.topic," 消息:")
     print(str(msg.payload.decode('utf-8')))
     msg=str(msg.payload.decode('utf-8'))
     #这里写接到消息干嘛,主要是使水循环开启
     if(msg=="0"):
-        GPIO.setmode(GPIO.LS2K)
         GPIO.setup(7, GPIO.OUT)
         print("wateron")
         GPIO.output(7, 0 )
         print("wateronon")
-        GPIO.cleanup()
 
     elif(msg=="1"):
-        GPIO.setmode(GPIO.LS2K)
         GPIO.setup(7, GPIO.OUT)
         print("wateroff")
         GPIO.output(7, 1)
         print("wateronoff")
-        GPIO.cleanup()
+
 
 
 def on_message_grassLight(client, userdata, msg):
@@ -72,6 +70,7 @@ def on_message_douyu(client, userdata, msg):
 
 if __name__ == '__main__':
     #这里传订阅的topic
+    GPIO.setmode(GPIO.LS2K)
     m2=MyMqttSub("waterCircleCtrl",on_message_waterCircle)
     m2.start()
     m3=MyMqttSub("grassLightCtrl",on_message_grassLight)
